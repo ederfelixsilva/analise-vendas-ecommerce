@@ -2,9 +2,9 @@
 
 # 📊 Análise de Vendas de E-commerce
 
-### Do dado bruto à decisão de negócio: um projeto de Análise de Dados com Python
+### Transformando dados de vendas em decisões de negócio
 
-Geração, limpeza, exploração e visualização de dados de vendas para transformar números em insights.
+Um projeto de Análise de Dados com Python que percorre o fluxo completo do trabalho de um analista: da geração dos dados à extração de insights.
 
 <br/>
 
@@ -23,6 +23,7 @@ Geração, limpeza, exploração e visualização de dados de vendas para transf
 <br/>
 
 [📖 Sobre](#-sobre-o-projeto) •
+[🗂️ Dataset](#️-dataset) •
 [🖼️ Demonstração](#️-demonstração) •
 [⚙️ Funcionalidades](#️-funcionalidades) •
 [🛠️ Tecnologias](#️-tecnologias) •
@@ -39,34 +40,53 @@ Geração, limpeza, exploração e visualização de dados de vendas para transf
 
 ## 📖 Sobre o Projeto
 
-Este projeto foi desenvolvido para **praticar o ciclo completo de um projeto de Análise de Dados**, utilizando Python como ferramenta principal. A proposta é simular a rotina de um analista de dados dentro de uma operação de e-commerce, percorrendo cada etapa do processo:
+Este projeto foi desenvolvido para praticar, de ponta a ponta, o ciclo de trabalho de um **Analista de Dados** aplicado a um cenário de e-commerce. A proposta central não é apenas escrever código, mas percorrer o raciocínio completo por trás de uma análise:
 
 <div align="center">
 
-**Dados brutos → Limpeza → Exploração → Visualização → Insights → Decisão**
+**Dados brutos → Tratamento → Exploração → Visualização → Insights → Decisão**
 
 </div>
 
-### 🎯 Objetivo Principal
+### 🎯 Objetivo
 
-Aplicar, na prática, técnicas de manipulação, tratamento e análise exploratória de dados com **Pandas** e **Matplotlib**, produzindo visualizações que ajudem a responder perguntas de negócio relevantes para um e-commerce.
+Utilizar **Python**, **Pandas** e **Matplotlib** para transformar uma base de vendas em informação útil — identificando padrões de faturamento, comportamento regional e evolução temporal que possam apoiar decisões comerciais.
 
 ### 💼 Problema de Negócio
 
-Empresas de e-commerce lidam constantemente com grandes volumes de dados de vendas — produtos, valores, datas, localidades — mas nem sempre esses dados são organizados de forma a gerar valor. Este projeto simula esse cenário: a partir de uma base de vendas, busca-se entender **quais produtos e regiões merecem mais atenção comercial** e **como a receita se comporta ao longo do tempo**.
+Em uma operação de e-commerce, dados de vendas são gerados constantemente, mas nem sempre chegam de forma organizada até quem precisa decidir. Antes de qualquer decisão comercial — como priorizar um produto, reforçar estoque ou direcionar investimento para uma região — é preciso primeiro **entender o que os dados mostram**. Este projeto simula justamente essa etapa: transformar uma base bruta de vendas em uma leitura clara do negócio.
 
 ### 💡 Motivação
 
-Como parte da minha formação em Análise e Desenvolvimento de Sistemas, este projeto foi construído para consolidar conhecimentos de Análise de Dados de ponta a ponta — não apenas a parte técnica de código, mas também a capacidade de **interpretar resultados e comunicá-los de forma clara**, como faria um analista de dados em um time real.
+Como parte da minha formação em Análise e Desenvolvimento de Sistemas, este projeto foi construído para consolidar a prática de Análise de Dados como um todo — não só a manipulação técnica com Pandas, mas também a capacidade de interpretar os resultados e comunicá-los de forma objetiva, como faria um analista dentro de uma empresa.
 
-### 🔍 Como esse tipo de análise ajuda um e-commerce
+### 📌 Por que essa análise importa
 
-Ao organizar e visualizar dados de vendas dessa forma, uma empresa consegue:
+- Ajuda a entender **onde está concentrada a receita** do negócio
+- Evidencia **diferenças regionais** que podem orientar estratégias comerciais
+- Permite acompanhar a **evolução do faturamento** ao longo do tempo
+- Compara **volume de vendas com receita gerada**, apoiando decisões de estoque
 
-- Identificar quais produtos concentram maior parte da receita
-- Entender em quais estados/regiões a operação é mais forte
-- Acompanhar a evolução do faturamento ao longo do tempo
-- Comparar volume de vendas com receita gerada, apoiando decisões de estoque e precificação
+<br/>
+
+---
+
+## 🗂️ Dataset
+
+O dataset utilizado neste projeto é **sintético**, gerado via script Python (`scripts/gerar_dados.py`), e foi construído para simular uma operação real de e-commerce, contendo informações de vendas por cliente, produto, categoria, estado e período.
+
+| Coluna | Descrição |
+|---|---|
+| `data` | Data em que a venda foi realizada |
+| `cliente_id` | Identificador único do cliente |
+| `produto` | Nome do produto vendido |
+| `categoria` | Categoria à qual o produto pertence |
+| `estado` | Estado (UF) onde a venda foi realizada |
+| `quantidade` | Quantidade de unidades vendidas na transação |
+| `preco` | Preço unitário do produto |
+| `faturamento` | Valor total gerado pela venda (quantidade × preço) |
+
+Essa estrutura permite responder perguntas de negócio como: quais produtos e categorias geram mais receita, como as vendas se distribuem entre os estados, e como o faturamento evolui mês a mês — a base de qualquer análise comercial em um e-commerce.
 
 <br/>
 
@@ -106,13 +126,13 @@ Ao organizar e visualizar dados de vendas dessa forma, uma empresa consegue:
 
 - 🧪 **Geração de dados** — criação de um dataset sintético de vendas de e-commerce
 - 🧹 **Limpeza e tratamento** — tratamento de valores nulos, duplicados e inconsistências
-- 📅 **Manipulação de datas** — conversão e padronização de campos temporais
-- 🔎 **Análise exploratória (EDA)** — exploração inicial da base de dados
-- 💰 **Cálculo de faturamento** — por produto e por estado
-- 🗺️ **Análise regional** — distribuição geográfica das vendas
-- 📈 **Análise temporal** — evolução do faturamento ao longo do tempo
-- 📊 **Visualizações** — gráficos gerados com Matplotlib
-- 💾 **Exportação dos gráficos** — salvamento automático na pasta `images/`
+- 📅 **Conversão de datas** — padronização de campos temporais para análise
+- 🔎 **Análise exploratória (EDA)** — exploração inicial e entendimento da base
+- 💰 **Faturamento por produto** — cálculo da receita gerada por item
+- 🗺️ **Faturamento por estado** — cálculo da receita por região
+- 📈 **Evolução temporal** — acompanhamento do faturamento ao longo do tempo
+- 📦 **Quantidade vendida por produto** — análise de volume por item
+- 💾 **Geração automática de gráficos** — visualizações salvas em `images/`
 
 <br/>
 
@@ -125,7 +145,7 @@ Ao organizar e visualizar dados de vendas dessa forma, uma empresa consegue:
 | ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white) | Linguagem principal do projeto |
 | ![Pandas](https://img.shields.io/badge/-Pandas-150458?style=flat-square&logo=pandas&logoColor=white) | Manipulação, limpeza e análise dos dados |
 | ![Matplotlib](https://img.shields.io/badge/-Matplotlib-11557C?style=flat-square&logo=plotly&logoColor=white) | Criação das visualizações |
-| ![Jupyter](https://img.shields.io/badge/-Jupyter%20Notebook-F37626?style=flat-square&logo=jupyter&logoColor=white) | Ambiente interativo para análise |
+| ![Jupyter](https://img.shields.io/badge/-Jupyter%20Notebook-F37626?style=flat-square&logo=jupyter&logoColor=white) | Ambiente interativo para condução da análise |
 | ![Git](https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white) | Controle de versão |
 | ![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github&logoColor=white) | Hospedagem e documentação do projeto |
 
@@ -228,19 +248,19 @@ jupyter notebook notebooks/analise_vendas.ipynb
 
 ### 💰 Faturamento por Produto
 
-Consolida a receita gerada por cada produto do catálogo, permitindo identificar quais itens têm maior relevância para o faturamento total e apoiando decisões comerciais, como priorização de vitrine e campanhas.
+Consolida a receita gerada por cada produto do catálogo, permitindo identificar quais itens têm maior peso no faturamento total — informação relevante para decisões como priorização de vitrine, campanhas e negociação com fornecedores.
 
 ### 🗺️ Faturamento por Estado
 
-Analisa a distribuição geográfica das vendas, ajudando a identificar em quais estados a operação já é forte e onde existem possíveis oportunidades de expansão comercial.
+Analisa a distribuição geográfica das vendas, ajudando a identificar em quais estados a operação já é mais forte e onde podem existir oportunidades de expansão comercial ou ações de marketing regional.
 
 ### 📅 Evolução Temporal
 
-Observa o comportamento do faturamento ao longo do tempo, permitindo identificar tendências de crescimento e possíveis padrões sazonais que merecem atenção do time de negócio.
+Observa o comportamento do faturamento mês a mês, permitindo identificar tendências de crescimento, possíveis quedas e padrões sazonais relevantes para o planejamento comercial.
 
 ### 📦 Quantidade Vendida por Produto
 
-Analisa o volume de unidades vendidas por produto, trazendo a perspectiva de demanda — informação que, comparada ao faturamento, apoia decisões de estoque e planejamento de compras.
+Analisa o volume de unidades vendidas por produto, trazendo a perspectiva de demanda. Combinada à análise de faturamento, apoia decisões relacionadas a estoque e planejamento de compras.
 
 <br/>
 
@@ -248,12 +268,25 @@ Analisa o volume de unidades vendidas por produto, trazendo a perspectiva de dem
 
 ## 💡 Principais Insights
 
-> Leitura dos resultados no formato de um breve relatório, como seria apresentado a um time de negócio:
+> Leitura dos resultados no formato de uma apresentação executiva, como seria levada a um time de negócio:
 
-- 🏆 **Concentração de receita** — alguns produtos tendem a representar uma parcela maior do faturamento total, o que pode indicar oportunidade de priorização comercial sobre esses itens específicos.
-- 🗺️ **Distribuição regional** — diferenças no faturamento entre estados podem sinalizar mercados já consolidados e outros com potencial ainda pouco explorado.
-- 📈 **Tendência temporal** — a evolução mensal do faturamento permite observar períodos de crescimento ou retração, informação útil para o planejamento de ações comerciais futuras.
-- 📦 **Volume x Receita** — produtos com maior quantidade vendida não necessariamente são os que mais faturam, reforçando a importância de olhar volume e receita em conjunto, e não isoladamente.
+- 🏆 **Concentração de receita** — parte do catálogo tende a concentrar a maior fatia do faturamento total, o que reforça a importância de priorizar esses produtos em ações comerciais e de estoque.
+- 🗺️ **Diferenças regionais** — o faturamento não se distribui de forma homogênea entre os estados, o que pode indicar tanto mercados já consolidados quanto regiões com potencial de crescimento ainda pouco explorado.
+- 📈 **Comportamento temporal** — a evolução mensal do faturamento permite observar se o negócio está em trajetória de crescimento, estabilidade ou retração, e se existem meses que se destacam.
+- 📦 **Volume x Receita** — produtos com maior volume de vendas não são necessariamente os que mais faturam, o que reforça a necessidade de olhar quantidade e receita em conjunto, e não isoladamente, ao definir prioridades.
+
+<br/>
+
+---
+
+## 🎯 Resultados da Análise
+
+De forma geral, este projeto demonstra como um conjunto de dados de vendas pode ser transformado em leitura de negócio, permitindo:
+
+- Identificar **padrões de venda** por produto e por período
+- Compreender a **distribuição regional** das vendas e onde a operação é mais relevante
+- Reconhecer **quais produtos concentram maior impacto** no faturamento
+- Fornecer uma base analítica que **apoia a tomada de decisão comercial**, como priorização de produtos, direcionamento regional e planejamento de estoque
 
 <br/>
 
@@ -262,11 +295,14 @@ Analisa o volume de unidades vendidas por produto, trazendo a perspectiva de dem
 ## 🔮 Melhorias Futuras
 
 - [ ] 📊 **Dashboard Power BI** — transformar as análises em um painel interativo
-- [ ] 📈 **Dashboard Plotly/Dash** — construir visualizações dinâmicas em Python
-- [ ] 🗄️ **SQL e Data Warehouse** — migrar as análises para consultas SQL e uma modelagem dimensional
-- [ ] 🤖 **Machine Learning** — aplicar modelos de previsão de vendas (forecasting)
-- [ ] ☁️ **Deploy** — publicar o dashboard em um serviço de nuvem
-- [ ] 🔄 **Pipeline ETL** — automatizar a atualização e o processamento dos dados
+- [ ] 🖥️ **Dashboard Streamlit** — criar uma aplicação web interativa em Python
+- [ ] 📈 **Plotly/Dash** — construir visualizações dinâmicas e interativas
+- [ ] 🗄️ **SQL** — migrar as análises para consultas SQL
+- [ ] 🏛️ **Data Warehouse** — estruturar uma modelagem dimensional para os dados
+- [ ] 🤖 **Machine Learning** — aplicar modelos preditivos sobre os dados de vendas
+- [ ] 🔮 **Forecasting** — prever tendências futuras de faturamento
+- [ ] 🔄 **Pipeline ETL** — automatizar a extração, transformação e carga dos dados
+- [ ] ☁️ **Cloud Deploy** — publicar a análise ou dashboard em um serviço de nuvem
 - [ ] 🧪 **Testes automatizados** — adicionar testes para as etapas de tratamento de dados
 
 <br/>
@@ -277,12 +313,14 @@ Analisa o volume de unidades vendidas por produto, trazendo a perspectiva de dem
 
 Durante o desenvolvimento deste projeto, os principais pontos de evolução foram:
 
+- Aprofundamento em **Python** aplicado à análise de dados
 - Manipulação e transformação de dados com **Pandas**
 - Boas práticas de **limpeza e tratamento de dados**
 - Condução de uma **análise exploratória (EDA)** de forma estruturada
 - Criação de **visualizações** claras e objetivas com Matplotlib
-- Desenvolvimento do raciocínio analítico para transformar dados em possíveis decisões de negócio
-- Organização de um projeto de dados seguindo **boas práticas de estrutura e documentação**
+- Desenvolvimento do raciocínio analítico necessário para transformar dados em possíveis decisões de negócio
+- Fortalecimento da **comunicação de insights** para públicos não técnicos
+- Organização de um projeto de dados seguindo **boas práticas profissionais de estrutura e documentação**
 
 <br/>
 
@@ -292,7 +330,7 @@ Durante o desenvolvimento deste projeto, os principais pontos de evolução fora
 
 <div align="center">
 
-### Éder Felix Silva
+### Éder Félix Silva
 
 Estudante de Análise e Desenvolvimento de Sistemas
 
